@@ -22,3 +22,5 @@ create table ordenes(
     totalCuenta decimal(10,2),
     fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO usuarios (nombre, email, usuario, password) VALUES ('Administrador', 'administrador@almacen2.com', 'admin', '1234');
