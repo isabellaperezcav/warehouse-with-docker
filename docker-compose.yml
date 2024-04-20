@@ -1,5 +1,14 @@
 version: '3'
 services:
+db:
+    image: mysql:5.7
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+
   usuarios:
     build: ./microUsuarios
     links: 
@@ -30,11 +39,4 @@ services:
     ports:
       - "2080:80"
 
-  db:
-    image: mysql
-    ports:
-      - "32000:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - ./db:/docker-entrypoint-initdb.d/:ro
+  
