@@ -4,7 +4,7 @@ WORKDIR /usuarios
 
 COPY src/controllers/usuariosController.js usuariosController.js
 COPY src/models/usuariosModel.js usuariosModel.js
-COPY index.js .
+COPY src/index.js .
 
 RUN npm init --yes
 RUN npm install express morgan mysql mysql2 axios
