@@ -1,6 +1,6 @@
 FROM node:20
 
-WORKDIR /usuarios
+WORKDIR /ordenes
 
 COPY ./src .
 
