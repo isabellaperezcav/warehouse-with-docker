@@ -5,7 +5,7 @@
     $pass=$_POST["password"];
 
     // URL de la solicitud POST
-    $url = 'http://192.168.100.2:3001/usuarios';
+    $url = 'http://usuarios:3001/usuarios';
 
     // Datos que se enviarán en la solicitud POST
     $data = array(

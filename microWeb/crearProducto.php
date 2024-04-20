@@ -4,7 +4,7 @@
     $inventario=$_POST["inventario"];
     
     // URL de la solicitud POST
-    $url = 'http://192.168.100.2:3002/productos';
+    $url = 'http://productos:3002/productos';
 
     // Datos que se enviarán en la solicitud POST
     $data = array(

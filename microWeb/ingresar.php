@@ -2,7 +2,7 @@
     $user=$_POST["usuario"];
     $pass=$_POST["password"];
 
-    $servurl="http://192.168.100.2:3001/usuarios/$user/$pass";
+    $servurl="http://usuarios:3001/usuarios/$user/$pass";
     $curl=curl_init($servurl);
 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
