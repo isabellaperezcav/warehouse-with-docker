@@ -1,10 +1,14 @@
 FROM node:20
 
-WORKDIR /microOrdenes
-COPY package.json .
-RUN npm install
+WORKDIR /usuarios
 
-EXPOSE 3003
+COPY src/controllers/usuariosController.js usuariosController.js
+COPY src/models/usuariosModel.js usuariosModel.js
+COPY index.js .
 
-COPY . .
-CMD npm start
+RUN npm init --yes
+RUN npm install express morgan mysql mysql2 axios
+
+EXPOSE 3001
+
+CMD node src/index.js
