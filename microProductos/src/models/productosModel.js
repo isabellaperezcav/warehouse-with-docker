@@ -3,8 +3,8 @@ const mysql = require('mysql2/promise');
 const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'almacen2'
+    password: 'root',
+    database: 'almacen3'
 });
 
 async function traerProductos() {

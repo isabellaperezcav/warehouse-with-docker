@@ -1,10 +1,16 @@
 FROM node:20
 
 WORKDIR /microProductos
-COPY package.json .
-RUN npm install
+
+COPY src/controllers/productosController.js productosController.js
+COPY src/models/productosModel.js productosModel.js
+COPY index.js .
+
+
+
+RUN npm init --yes
+RUN npm install express morgan mysql mysql2 axios
 
 EXPOSE 3002
 
-COPY . .
-CMD npm start
+CMD node src/index.js
