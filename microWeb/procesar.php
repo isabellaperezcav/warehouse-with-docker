@@ -41,8 +41,6 @@ if ($response===false){
 }
 // Cerrar la conexión cURL
 curl_close($ch);
-
-echo "la orden ha sido creada";
 header("Location:usuario.php");
 
 ?>

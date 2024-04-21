@@ -19,11 +19,9 @@
         session_start();
         $_SESSION["usuario"]=$user;
         if ($user == "admin"){ 
-            echo "admin";
             header("Location:admin.php");
         } 
-        else { 
-            echo "usuario";
+        else {
             header("Location:usuario.php");
         } 
     }
