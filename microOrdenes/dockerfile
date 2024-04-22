@@ -4,7 +4,7 @@ WORKDIR /microOrdenes
 
 COPY src/controllers /microOrdenes/src/controllers
 COPY src/models /microOrdenes/src/models
-COPY src/index.js /microOrdenes/sr
+COPY src/index.js /microOrdenes/src
 
 RUN npm init --yes
 RUN npm install express morgan mysql mysql2 axios
