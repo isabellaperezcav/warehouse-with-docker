@@ -1,8 +1,10 @@
 FROM node:20
 
-WORKDIR /productos
+WORKDIR /microProductos
 
-COPY ./src .
+COPY src/controllers /microProductos/src/controllers
+COPY src/models /microProductos/src/models
+COPY src/index.js /microProductos/sr
 
 RUN npm init --yes
 RUN npm install express morgan mysql mysql2 axios
