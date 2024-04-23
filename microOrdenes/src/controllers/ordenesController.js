@@ -37,7 +37,7 @@ router.post('/ordenes', async (req, res) => {
 
     // Creamos la orden
     const response = await
-        axios.get(`http://localhost:3001/usuarios/${usuario}`);
+        axios.get(`http://usuarios:3001/usuarios/${usuario}`);
     const name = response.data.nombre;
     const email = response.data.email;
     orden = {
@@ -57,7 +57,7 @@ async function calcularTotal(items) {
     let ordenTotal = 0;
     for (const producto of items) {
         const response = await
-            axios.get(`http://localhost:3002/productos/${producto.id}`);
+            axios.get(`http://productos:3002/productos/${producto.id}`);
         ordenTotal += response.data.precio * producto.cantidad;
     }
     return ordenTotal;
@@ -68,7 +68,7 @@ async function verificarDisponibilidad(items) {
     let disponibilidad = true;
     for (const producto of items) {
         const response = await
-            axios.get(`http://localhost:3002/productos/${producto.id}`);
+            axios.get(`http://productos:3002/productos/${producto.id}`);
         if (response.data.inventario < producto.cantidad) {
             disponibilidad = false;
             break;
@@ -81,10 +81,10 @@ async function verificarDisponibilidad(items) {
 async function actualizarInventario(items) {
     for (const producto of items) {
         const response = await
-            axios.get(`http://localhost:3002/productos/${producto.id}`);
+            axios.get(`http://productos:3002/productos/${producto.id}`);
         const inventarioActual = response.data.inventario;
         const inv = inventarioActual - producto.cantidad;
-        await axios.put(`http://localhost:3002/productos/${producto.id}`, {
+        await axios.put(`http://productos:3002/productos/${producto.id}`, {
             inventario: inv
         });
     }
